@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "[INFO] Starting RetroAssembly..."
+cd /app
+exec s6-setuidgid bsd node dist/server/serve.js

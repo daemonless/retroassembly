@@ -1,0 +1,10 @@
+build:
+  variants:
+    - tag: latest
+      containerfile: Containerfile
+
+cit:
+  mode: health
+  port: 8000
+  health: /
+  ready: "is running at"
