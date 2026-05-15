@@ -1,0 +1,445 @@
+{
+  "generated": "2026-05-15T21:38:43Z",
+  "image": "retroassembly",
+  "tags": {
+    "latest": {
+      "app_version": "v6.260321.1810",
+      "arch": "amd64",
+      "generated": "2026-05-15T21:37:27Z",
+      "packages": {
+        "dotnet": [],
+        "freebsd": [
+          {
+            "name": "FreeBSD-audit-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-blocklist",
+            "version": "15.0p3"
+          },
+          {
+            "name": "FreeBSD-bzip2-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-certctl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-clibs",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ctf-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-fetch",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-kerberos-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libarchive",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libbsdstat",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libcasper",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libexecinfo",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libldns",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libmagic",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libucl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-mtree",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ncurses-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-openssl",
+            "version": "15.0p2"
+          },
+          {
+            "name": "FreeBSD-openssl-lib",
+            "version": "15.0p2"
+          },
+          {
+            "name": "FreeBSD-pkg-bootstrap",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-rc",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-runtime",
+            "version": "15.0p8"
+          },
+          {
+            "name": "FreeBSD-tcpd",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ufs-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-utilities",
+            "version": "15.0p1"
+          },
+          {
+            "name": "FreeBSD-xz-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zfs-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zlib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zoneinfo",
+            "version": "15.0p7"
+          },
+          {
+            "name": "brotli",
+            "version": "1.2.0,1"
+          },
+          {
+            "name": "c-ares",
+            "version": "1.34.6"
+          },
+          {
+            "name": "ca_root_nss",
+            "version": "3.123.1"
+          },
+          {
+            "name": "corepack",
+            "version": "0.34.6"
+          },
+          {
+            "name": "execline",
+            "version": "2.9.8.1"
+          },
+          {
+            "name": "googletest",
+            "version": "1.16.0"
+          },
+          {
+            "name": "hdr_histogram",
+            "version": "0.11.9"
+          },
+          {
+            "name": "icu",
+            "version": "76.1,1"
+          },
+          {
+            "name": "jq",
+            "version": "1.8.1"
+          },
+          {
+            "name": "libada",
+            "version": "3.4.4"
+          },
+          {
+            "name": "libedit",
+            "version": "3.1.20251016_1,1"
+          },
+          {
+            "name": "libfmt",
+            "version": "12.1.0"
+          },
+          {
+            "name": "libnghttp2",
+            "version": "1.68.1"
+          },
+          {
+            "name": "libnghttp3",
+            "version": "1.15.0"
+          },
+          {
+            "name": "libngtcp2",
+            "version": "1.22.1"
+          },
+          {
+            "name": "libuv",
+            "version": "1.52.0"
+          },
+          {
+            "name": "lief",
+            "version": "0.17.5"
+          },
+          {
+            "name": "llhttp",
+            "version": "9.3.1"
+          },
+          {
+            "name": "mbedtls3",
+            "version": "3.6.6"
+          },
+          {
+            "name": "merve",
+            "version": "1.2.0_1"
+          },
+          {
+            "name": "nbytes",
+            "version": "0.1.3"
+          },
+          {
+            "name": "node25",
+            "version": "25.9.0"
+          },
+          {
+            "name": "oniguruma",
+            "version": "6.9.10"
+          },
+          {
+            "name": "pkg",
+            "version": "2.6.2_1"
+          },
+          {
+            "name": "s6",
+            "version": "2.14.0.1"
+          },
+          {
+            "name": "simdjson",
+            "version": "4.5.0"
+          },
+          {
+            "name": "simdutf",
+            "version": "8.2.0"
+          },
+          {
+            "name": "skalibs",
+            "version": "2.14.5.1"
+          },
+          {
+            "name": "spdlog",
+            "version": "1.17.0"
+          },
+          {
+            "name": "sqlite3",
+            "version": "3.50.4_2,1"
+          },
+          {
+            "name": "uvwasi",
+            "version": "0.0.23"
+          },
+          {
+            "name": "zstd",
+            "version": "1.5.7_1"
+          }
+        ],
+        "go": [],
+        "java": [],
+        "node": [
+          {
+            "name": "base64-js",
+            "version": "1.5.1"
+          },
+          {
+            "name": "beep-boop",
+            "version": "1.2.3"
+          },
+          {
+            "name": "better-sqlite3",
+            "version": "12.8.0"
+          },
+          {
+            "name": "bindings",
+            "version": "1.5.0"
+          },
+          {
+            "name": "bl",
+            "version": "4.1.0"
+          },
+          {
+            "name": "buffer",
+            "version": "5.7.1"
+          },
+          {
+            "name": "chownr",
+            "version": "1.1.4"
+          },
+          {
+            "name": "corepack",
+            "version": "0.34.6"
+          },
+          {
+            "name": "decompress-response",
+            "version": "6.0.0"
+          },
+          {
+            "name": "deep-extend",
+            "version": "0.6.0"
+          },
+          {
+            "name": "detect-libc",
+            "version": "2.1.2"
+          },
+          {
+            "name": "end-of-stream",
+            "version": "1.4.5"
+          },
+          {
+            "name": "expand-template",
+            "version": "2.0.3"
+          },
+          {
+            "name": "file-uri-to-path",
+            "version": "1.0.0"
+          },
+          {
+            "name": "fs-constants",
+            "version": "1.0.0"
+          },
+          {
+            "name": "github-from-package",
+            "version": "0.0.0"
+          },
+          {
+            "name": "hono",
+            "version": "4.12.8"
+          },
+          {
+            "name": "ieee754",
+            "version": "1.2.1"
+          },
+          {
+            "name": "inherits",
+            "version": "2.0.4"
+          },
+          {
+            "name": "ini",
+            "version": "1.3.8"
+          },
+          {
+            "name": "mimic-response",
+            "version": "3.1.0"
+          },
+          {
+            "name": "minimist",
+            "version": "1.2.8"
+          },
+          {
+            "name": "mkdirp-classic",
+            "version": "0.5.3"
+          },
+          {
+            "name": "napi-build-utils",
+            "version": "2.0.0"
+          },
+          {
+            "name": "node-abi",
+            "version": "3.89.0"
+          },
+          {
+            "name": "once",
+            "version": "1.4.0"
+          },
+          {
+            "name": "prebuild-install",
+            "version": "7.1.3"
+          },
+          {
+            "name": "pump",
+            "version": "3.0.4"
+          },
+          {
+            "name": "rc",
+            "version": "1.2.8"
+          },
+          {
+            "name": "readable-stream",
+            "version": "3.6.2"
+          },
+          {
+            "name": "safe-buffer",
+            "version": "5.2.1"
+          },
+          {
+            "name": "semver",
+            "version": "7.7.4"
+          },
+          {
+            "name": "simple-concat",
+            "version": "1.0.1"
+          },
+          {
+            "name": "simple-get",
+            "version": "4.0.1"
+          },
+          {
+            "name": "string_decoder",
+            "version": "1.3.0"
+          },
+          {
+            "name": "strip-json-comments",
+            "version": "2.0.1"
+          },
+          {
+            "name": "tar-fs",
+            "version": "2.1.4"
+          },
+          {
+            "name": "tar-stream",
+            "version": "2.2.0"
+          },
+          {
+            "name": "tunnel-agent",
+            "version": "0.6.0"
+          },
+          {
+            "name": "util-deprecate",
+            "version": "1.0.2"
+          },
+          {
+            "name": "wrappy",
+            "version": "1.0.2"
+          }
+        ],
+        "php": [],
+        "python": [],
+        "ruby": [],
+        "rust": []
+      },
+      "source": "upstream",
+      "summary": {
+        "dotnet": 0,
+        "freebsd": 61,
+        "go": 0,
+        "java": 0,
+        "node": 41,
+        "php": 0,
+        "python": 0,
+        "ruby": 0,
+        "rust": 0,
+        "total": 102
+      }
+    }
+  }
+}
