@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-15T21:38:43Z",
+  "generated": "2026-05-23T21:06:53Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v6.260321.1810",
       "arch": "amd64",
-      "generated": "2026-05-15T21:37:27Z",
+      "generated": "2026-05-23T21:05:36Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -135,7 +135,7 @@
           },
           {
             "name": "ca_root_nss",
-            "version": "3.123.1"
+            "version": "3.124"
           },
           {
             "name": "corepack",
