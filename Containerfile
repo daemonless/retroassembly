@@ -13,7 +13,7 @@ ARG BASE_VERSION=15
 FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
 
 RUN pkg update && pkg install -y \
-    node25 npm-node25 git ca_root_nss \
+    node npm python3 git ca_root_nss \
     FreeBSD-toolchain FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-runtime-dev
 
 RUN npm install -g pnpm@9
@@ -54,7 +54,7 @@ RUN pnpm prune --prod
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
-ARG PACKAGES="node25 ca_root_nss"
+ARG PACKAGES="node ca_root_nss"
 ARG UPSTREAM_URL="https://api.github.com/repos/arianrhodsandlot/retroassembly/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
 ARG HEALTHCHECK_ENDPOINT="http://localhost:8000/"

@@ -18,13 +18,11 @@ Personal retro game collection cabinet in your browser. Play NES, SNES, Genesis,
 | **Website** | [https://retroassembly.com/](https://retroassembly.com/) |
 
 ## Version Tags
-
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
 | `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
 
 ## Prerequisites
-
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
@@ -34,31 +32,36 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   retroassembly:
-    image: ghcr.io/daemonless/retroassembly:latest
+    image: "ghcr.io/daemonless/retroassembly:latest"
     container_name: retroassembly
     environment:
-      - RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data
-      - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage
+      - RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data  # Data directory for SQLite database (default: /data)
+      - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage  # Directory for uploaded ROM files (default: /data/storage)
+      - RETROASSEMBLY_RUN_TIME_PORT=  # HTTP port (default: 8000)
     volumes:
       - "/path/to/containers/retroassembly/data:/data"
     ports:
-      - 8000:8000
+      - "8000:8000"
     restart: unless-stopped
 ```
 
 ### AppJail Director
-
 **.env**:
 
 ```
+# .env
+
 DIRECTOR_PROJECT=retroassembly
 RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data
 RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage
+RETROASSEMBLY_RUN_TIME_PORT=
 ```
 
 **appjail-director.yml**:
 
 ```yaml
+# appjail-director.yml
+
 options:
   - virtualnet: ':<random> default'
   - nat:
@@ -67,11 +70,13 @@ services:
     name: retroassembly
     options:
       - container: 'boot args:--pull'
+      - expose: '8000:8000 proto:tcp' \
     oci:
       user: root
       environment:
         - RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY: !ENV '${RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY}'
         - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY: !ENV '${RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY}'
+        - RETROASSEMBLY_RUN_TIME_PORT: !ENV '${RETROASSEMBLY_RUN_TIME_PORT}'
     volumes:
       - retroassembly_data: /data
 volumes:
@@ -82,11 +87,14 @@ volumes:
 **Makejail**:
 
 ```
+# Makejail
+
 ARG tag=latest
 
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/retroassembly:${tag}
 ```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
 
@@ -95,9 +103,27 @@ podman run -d --name retroassembly \
   -p 8000:8000 \
   -e RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
   -e RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
+  -e RETROASSEMBLY_RUN_TIME_PORT= \
   -v /path/to/containers/retroassembly/data:/data \
   ghcr.io/daemonless/retroassembly:latest
 ```
+
+### AppJail
+
+```bash
+appjail oci run -Pd \
+  -o overwrite=force \
+  -o container="args:--pull" \
+  -o virtualnet=":<random> default" \
+  -o nat \
+  -o expose="8000:8000 proto:tcp" \
+  -e RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
+  -e RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
+  -e RETROASSEMBLY_RUN_TIME_PORT= \
+  -o fstab="/path/to/containers/retroassembly/data /data <pseudofs>" \
+  ghcr.io/daemonless/retroassembly:latest retroassembly
+```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Ansible
 
@@ -105,17 +131,20 @@ podman run -d --name retroassembly \
 - name: Deploy retroassembly
   containers.podman.podman_container:
     name: retroassembly
-    image: ghcr.io/daemonless/retroassembly:latest
+    image: "ghcr.io/daemonless/retroassembly:latest"
     state: started
     restart_policy: always
     env:
       RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY: "/data"
       RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY: "/data/storage"
+      RETROASSEMBLY_RUN_TIME_PORT: ""
     ports:
       - "8000:8000"
     volumes:
       - "/path/to/containers/retroassembly/data:/data"
 ```
+
+Access at: `http://localhost:8000`
 
 ## Parameters
 
@@ -125,6 +154,7 @@ podman run -d --name retroassembly \
 |----------|---------|-------------|
 | `RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY` | `/data` | Data directory for SQLite database (default: /data) |
 | `RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY` | `/data/storage` | Directory for uploaded ROM files (default: /data/storage) |
+| `RETROASSEMBLY_RUN_TIME_PORT` | `` | HTTP port (default: 8000) |
 
 ### Volumes
 
@@ -140,7 +170,7 @@ podman run -d --name retroassembly \
 
 **Architectures:** amd64
 **User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
-**Base:** FreeBSD 15.0
+**Base:** FreeBSD 15
 
 ---
 
