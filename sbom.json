@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-07T08:50:34Z",
+  "generated": "2026-07-18T19:46:46Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v6.260321.1810",
       "arch": "amd64",
-      "generated": "2026-07-07T08:49:12Z",
+      "generated": "2026-07-18T19:45:29Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -135,11 +135,11 @@
           },
           {
             "name": "ca_root_nss",
-            "version": "3.124"
+            "version": "3.125"
           },
           {
             "name": "corepack",
-            "version": "0.34.6"
+            "version": "0.35.0"
           },
           {
             "name": "execline",
@@ -151,7 +151,7 @@
           },
           {
             "name": "hdr_histogram",
-            "version": "0.11.9"
+            "version": "0.11.10"
           },
           {
             "name": "icu",
@@ -159,7 +159,7 @@
           },
           {
             "name": "jq",
-            "version": "1.8.1"
+            "version": "1.8.2"
           },
           {
             "name": "libada",
@@ -167,51 +167,47 @@
           },
           {
             "name": "libedit",
-            "version": "3.1.20251016_1,1"
+            "version": "3.1.20260512,1"
           },
           {
-            "name": "libfmt",
-            "version": "12.1.0"
+            "name": "liblz4",
+            "version": "1.10.0_2,1"
           },
           {
             "name": "libnghttp2",
-            "version": "1.68.1"
+            "version": "1.69.0"
           },
           {
             "name": "libnghttp3",
-            "version": "1.15.0"
+            "version": "1.17.0"
           },
           {
             "name": "libngtcp2",
-            "version": "1.22.1"
+            "version": "1.24.0"
           },
           {
             "name": "libuv",
-            "version": "1.52.0"
-          },
-          {
-            "name": "lief",
-            "version": "0.17.5"
+            "version": "1.52.1"
           },
           {
             "name": "llhttp",
-            "version": "9.3.1"
-          },
-          {
-            "name": "mbedtls3",
-            "version": "3.6.6"
+            "version": "9.4.2"
           },
           {
             "name": "merve",
-            "version": "1.2.0_1"
+            "version": "1.2.2_1"
           },
           {
             "name": "nbytes",
-            "version": "0.1.3"
+            "version": "0.1.4"
           },
           {
-            "name": "node25",
-            "version": "25.9.0"
+            "name": "node",
+            "version": "24.18.0_3"
+          },
+          {
+            "name": "node24",
+            "version": "24.18.0"
           },
           {
             "name": "oniguruma",
@@ -219,7 +215,7 @@
           },
           {
             "name": "pkg",
-            "version": "2.6.2_1"
+            "version": "2.7.5"
           },
           {
             "name": "s6",
@@ -227,23 +223,19 @@
           },
           {
             "name": "simdjson",
-            "version": "4.5.0"
+            "version": "4.6.4"
           },
           {
             "name": "simdutf",
-            "version": "8.2.0"
+            "version": "9.0.0"
           },
           {
             "name": "skalibs",
             "version": "2.14.5.1"
           },
           {
-            "name": "spdlog",
-            "version": "1.17.0"
-          },
-          {
             "name": "sqlite3",
-            "version": "3.50.4_2,1"
+            "version": "3.53.3,1"
           },
           {
             "name": "uvwasi",
@@ -251,7 +243,7 @@
           },
           {
             "name": "zstd",
-            "version": "1.5.7_1"
+            "version": "1.5.7_2"
           }
         ],
         "go": [],
@@ -287,7 +279,7 @@
           },
           {
             "name": "corepack",
-            "version": "0.34.6"
+            "version": "0.35.0"
           },
           {
             "name": "decompress-response",
@@ -430,7 +422,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 61,
+        "freebsd": 59,
         "go": 0,
         "java": 0,
         "node": 41,
@@ -438,7 +430,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 102
+        "total": 100
       }
     }
   }
