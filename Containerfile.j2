@@ -10,7 +10,7 @@ RUN pkg update && pkg install -y \
     node npm python3 git ca_root_nss \
     FreeBSD-toolchain FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-runtime-dev
 
-RUN npm install -g pnpm@9
+RUN npm install -g pnpm@11
 
 ARG VERSION=latest
 RUN if [ "$VERSION" = "latest" ]; then \
@@ -21,9 +21,13 @@ RUN if [ "$VERSION" = "latest" ]; then \
 
 WORKDIR /src
 
-# Whitelist which packages can run install scripts (workerd has no FreeBSD binary)
+# Whitelist which packages can run install scripts (workerd has no FreeBSD binary).
+# v7 ships pnpm-workspace.yaml with dangerouslyAllowAllBuilds:true — replace it with
+# a pnpm 11 allowBuilds map (strictDepBuilds errors on any undeclared build script).
 ENV SKIP_INSTALL_SIMPLE_GIT_HOOKS=true
-RUN node -e "const p=require('./package.json'); p.pnpm={...p.pnpm,onlyBuiltDependencies:['better-sqlite3','esbuild','sharp']}; require('fs').writeFileSync('./package.json',JSON.stringify(p,null,2))"
+RUN sed -i '' '/dangerouslyAllowAllBuilds/d' pnpm-workspace.yaml && \
+    printf 'allowBuilds:\n  better-sqlite3: true\n  esbuild: true\n  sharp: true\n  workerd: false\n' >> pnpm-workspace.yaml && \
+    cat pnpm-workspace.yaml
 
 # Install all deps (dev included for build; better-sqlite3 compiled here with toolchain)
 RUN pnpm install --no-frozen-lockfile
