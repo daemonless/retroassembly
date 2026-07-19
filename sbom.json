@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-18T19:46:46Z",
+  "generated": "2026-07-19T23:02:13Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
-      "app_version": "v6.260321.1810",
+      "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-07-18T19:45:29Z",
+      "generated": "2026-07-19T23:00:54Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -67,6 +67,10 @@
           },
           {
             "name": "FreeBSD-libucl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-locales",
             "version": "15.0"
           },
           {
@@ -259,7 +263,7 @@
           },
           {
             "name": "better-sqlite3",
-            "version": "12.8.0"
+            "version": "12.11.1"
           },
           {
             "name": "bindings",
@@ -315,7 +319,7 @@
           },
           {
             "name": "hono",
-            "version": "4.12.8"
+            "version": "4.12.31"
           },
           {
             "name": "ieee754",
@@ -347,7 +351,7 @@
           },
           {
             "name": "node-abi",
-            "version": "3.89.0"
+            "version": "3.94.0"
           },
           {
             "name": "once",
@@ -375,7 +379,7 @@
           },
           {
             "name": "semver",
-            "version": "7.7.4"
+            "version": "7.8.5"
           },
           {
             "name": "simple-concat",
@@ -395,7 +399,7 @@
           },
           {
             "name": "tar-fs",
-            "version": "2.1.4"
+            "version": "2.1.5"
           },
           {
             "name": "tar-stream",
@@ -422,7 +426,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 59,
+        "freebsd": 60,
         "go": 0,
         "java": 0,
         "node": 41,
@@ -430,7 +434,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 100
+        "total": 101
       }
     }
   }
