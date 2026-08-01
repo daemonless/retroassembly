@@ -1,251 +1,452 @@
 {
-  "generated": "2026-07-28T16:24:13Z",
+  "generated": "2026-08-01T20:25:23Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-07-28T16:22:51Z",
+      "generated": "2026-08-01T20:00:43Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-audit-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-blocklist",
-            "version": "15.0p3"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-bzip2-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-certctl",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-clibs",
-            "version": "15.0p11"
+            "version": "15.1p2"
           },
           {
+            "licenses": [
+              "CDDL-1.0"
+            ],
             "name": "FreeBSD-ctf-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-fetch",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-kerberos-lib",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-libarchive",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-libbsdstat",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-libcasper",
-            "version": "15.0p9"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-libexecinfo",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-libldns",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-libmagic",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-libucl",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-locales",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-mtree",
-            "version": "15.0"
+            "version": "15.1p2"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-ncurses-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-openssl",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "FreeBSD-pam-lib",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-pkg-bootstrap",
-            "version": "15.0p10"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-rc",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-runtime",
-            "version": "15.0p11"
+            "version": "15.1p2"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-tcpd",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-ufs-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-utilities",
-            "version": "15.0p11"
+            "version": "15.1p2"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "FreeBSD-xz-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "CDDL-1.0"
+            ],
             "name": "FreeBSD-zfs-lib",
-            "version": "15.0p11"
+            "version": "15.1p1"
           },
           {
+            "licenses": [
+              "Zlib"
+            ],
             "name": "FreeBSD-zlib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
+            "licenses": [
+              "PD"
+            ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.0p7"
+            "version": "15.1p2"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "FreeBSD-zstd-lib",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
             "name": "brotli",
             "version": "1.2.0,1"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "c-ares",
             "version": "1.34.6"
           },
           {
+            "licenses": [
+              "MPL20"
+            ],
             "name": "ca_root_nss",
             "version": "3.125"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "corepack",
             "version": "0.35.0"
           },
           {
+            "licenses": [
+              "ISCL"
+            ],
             "name": "execline",
             "version": "2.9.8.1"
           },
           {
+            "licenses": [
+              "BSD3CLAUSE"
+            ],
             "name": "googletest",
             "version": "1.16.0"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE",
+              "CC0-1.0"
+            ],
             "name": "hdr_histogram",
             "version": "0.11.10"
           },
           {
+            "licenses": [
+              "ICU"
+            ],
             "name": "icu",
             "version": "76.1,1"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "jq",
             "version": "1.8.2"
           },
           {
+            "licenses": [
+              "MIT",
+              "APACHE20"
+            ],
             "name": "libada",
             "version": "3.4.4"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "libedit",
             "version": "3.1.20260512,1"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE",
+              "GPLv2"
+            ],
             "name": "liblz4",
             "version": "1.10.0_2,1"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "libnghttp2",
             "version": "1.69.0"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "libnghttp3",
             "version": "1.17.0"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "libngtcp2",
             "version": "1.24.0"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "libuv",
             "version": "1.52.1"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "llhttp",
             "version": "9.4.2"
           },
           {
+            "licenses": [
+              "MIT",
+              "APACHE20"
+            ],
             "name": "merve",
             "version": "1.2.2_1"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "nbytes",
             "version": "0.1.4"
           },
           {
+            "licenses": [
+              "NA"
+            ],
             "name": "node",
             "version": "24.18.0_3"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "node24",
             "version": "24.18.0"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "oniguruma",
             "version": "6.9.10"
           },
           {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
             "name": "pkg",
             "version": "2.7.5"
           },
           {
+            "licenses": [
+              "ISCL"
+            ],
             "name": "s6",
             "version": "2.14.0.1"
           },
           {
+            "licenses": [
+              "MIT",
+              "APACHE20"
+            ],
             "name": "simdjson",
             "version": "4.6.4"
           },
           {
+            "licenses": [
+              "MIT",
+              "APACHE20"
+            ],
             "name": "simdutf",
             "version": "9.0.0"
           },
           {
+            "licenses": [
+              "ISCL"
+            ],
             "name": "skalibs",
             "version": "2.14.5.1"
           },
           {
+            "licenses": [
+              "PD"
+            ],
             "name": "sqlite3",
             "version": "3.53.3,1"
           },
           {
+            "licenses": [
+              "MIT"
+            ],
             "name": "uvwasi",
             "version": "0.0.23"
           },
           {
+            "licenses": [
+              "BSD3CLAUSE",
+              "GPLv2"
+            ],
             "name": "zstd",
             "version": "1.5.7_2"
           }
@@ -255,166 +456,207 @@
         "node": [
           {
             "name": "base64-js",
+            "purl": "",
             "version": "1.5.1"
           },
           {
             "name": "beep-boop",
+            "purl": "",
             "version": "1.2.3"
           },
           {
             "name": "better-sqlite3",
+            "purl": "",
             "version": "12.11.1"
           },
           {
             "name": "bindings",
+            "purl": "",
             "version": "1.5.0"
           },
           {
             "name": "bl",
+            "purl": "",
             "version": "4.1.0"
           },
           {
             "name": "buffer",
+            "purl": "",
             "version": "5.7.1"
           },
           {
             "name": "chownr",
+            "purl": "",
             "version": "1.1.4"
           },
           {
             "name": "corepack",
+            "purl": "",
             "version": "0.35.0"
           },
           {
             "name": "decompress-response",
+            "purl": "",
             "version": "6.0.0"
           },
           {
             "name": "deep-extend",
+            "purl": "",
             "version": "0.6.0"
           },
           {
             "name": "detect-libc",
+            "purl": "",
             "version": "2.1.2"
           },
           {
             "name": "end-of-stream",
+            "purl": "",
             "version": "1.4.5"
           },
           {
             "name": "expand-template",
+            "purl": "",
             "version": "2.0.3"
           },
           {
             "name": "file-uri-to-path",
+            "purl": "",
             "version": "1.0.0"
           },
           {
             "name": "fs-constants",
+            "purl": "",
             "version": "1.0.0"
           },
           {
             "name": "github-from-package",
+            "purl": "",
             "version": "0.0.0"
           },
           {
             "name": "hono",
+            "purl": "",
             "version": "4.12.31"
           },
           {
             "name": "ieee754",
+            "purl": "",
             "version": "1.2.1"
           },
           {
             "name": "inherits",
+            "purl": "",
             "version": "2.0.4"
           },
           {
             "name": "ini",
+            "purl": "",
             "version": "1.3.8"
           },
           {
             "name": "mimic-response",
+            "purl": "",
             "version": "3.1.0"
           },
           {
             "name": "minimist",
+            "purl": "",
             "version": "1.2.8"
           },
           {
             "name": "mkdirp-classic",
+            "purl": "",
             "version": "0.5.3"
           },
           {
             "name": "napi-build-utils",
+            "purl": "",
             "version": "2.0.0"
           },
           {
             "name": "node-abi",
+            "purl": "",
             "version": "3.94.0"
           },
           {
             "name": "once",
+            "purl": "",
             "version": "1.4.0"
           },
           {
             "name": "prebuild-install",
+            "purl": "",
             "version": "7.1.3"
           },
           {
             "name": "pump",
+            "purl": "",
             "version": "3.0.4"
           },
           {
             "name": "rc",
+            "purl": "",
             "version": "1.2.8"
           },
           {
             "name": "readable-stream",
+            "purl": "",
             "version": "3.6.2"
           },
           {
             "name": "safe-buffer",
+            "purl": "",
             "version": "5.2.1"
           },
           {
             "name": "semver",
+            "purl": "",
             "version": "7.8.5"
           },
           {
             "name": "simple-concat",
+            "purl": "",
             "version": "1.0.1"
           },
           {
             "name": "simple-get",
+            "purl": "",
             "version": "4.0.1"
           },
           {
             "name": "string_decoder",
+            "purl": "",
             "version": "1.3.0"
           },
           {
             "name": "strip-json-comments",
+            "purl": "",
             "version": "2.0.1"
           },
           {
             "name": "tar-fs",
+            "purl": "",
             "version": "2.1.5"
           },
           {
             "name": "tar-stream",
+            "purl": "",
             "version": "2.2.0"
           },
           {
             "name": "tunnel-agent",
+            "purl": "",
             "version": "0.6.0"
           },
           {
             "name": "util-deprecate",
+            "purl": "",
             "version": "1.0.2"
           },
           {
             "name": "wrappy",
+            "purl": "",
             "version": "1.0.2"
           }
         ],
@@ -426,7 +668,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 60,
+        "freebsd": 62,
         "go": 0,
         "java": 0,
         "node": 41,
@@ -434,7 +676,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 101
+        "total": 103
       }
     }
   }
