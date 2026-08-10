@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-01T20:25:23Z",
+  "generated": "2026-08-10T10:55:42Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-08-01T20:00:43Z",
+      "generated": "2026-08-10T10:54:07Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -411,7 +411,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.4"
+            "version": "4.6.6"
           },
           {
             "licenses": [
