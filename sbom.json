@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-10T10:55:42Z",
+  "generated": "2026-08-10T22:11:46Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-08-10T10:54:07Z",
+      "generated": "2026-08-10T22:10:56Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
