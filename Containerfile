@@ -16,8 +16,6 @@ RUN pkg update && pkg install -y \
     node npm python3 git ca_root_nss \
     FreeBSD-toolchain FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-runtime-dev
 
-RUN npm install -g pnpm@11
-
 ARG VERSION=latest
 RUN if [ "$VERSION" = "latest" ]; then \
       VERSION=$(fetch -qo - https://api.github.com/repos/arianrhodsandlot/retroassembly/releases/latest | jq -r .tag_name); \
@@ -35,8 +33,11 @@ RUN sed -i '' '/dangerouslyAllowAllBuilds/d' pnpm-workspace.yaml && \
     printf 'allowBuilds:\n  better-sqlite3: true\n  esbuild: true\n  sharp: true\n  workerd: false\n' >> pnpm-workspace.yaml && \
     cat pnpm-workspace.yaml
 
+# Pin exact pnpm version -- "latest"/major-only delegates to a FreeBSD @pnpm/exe binary that doesn't exist.
 # Install all deps (dev included for build; better-sqlite3 compiled here with toolchain)
-RUN pnpm install --no-frozen-lockfile
+RUN PNPM_VERSION=$(jq -r '.packageManager' package.json | sed 's/^pnpm@//') && \
+    npm install -g "pnpm@${PNPM_VERSION}" && \
+    pnpm install --no-frozen-lockfile
 
 # vite-plus bundles rolldown but expects the FreeBSD native binding alongside its dist files
 RUN BINDING=$(find /src/node_modules/.pnpm -name "rolldown-binding.freebsd-x64.node" 2>/dev/null | head -1) && \

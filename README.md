@@ -20,7 +20,7 @@ Personal retro game collection cabinet in your browser. Play NES, SNES, Genesis,
 ## Version Tags
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
-| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+| `latest` | **Upstream Binary**. Built from official release. | Most users — recommended. |
 
 ## Prerequisites
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
@@ -39,7 +39,7 @@ services:
       - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage  # Directory for uploaded ROM files (default: /data/storage)
       - RETROASSEMBLY_RUN_TIME_PORT=  # HTTP port (default: 8000)
     volumes:
-      - "/path/to/containers/retroassembly/data:/data"
+      - "/path/to/containers/retroassembly:/data"
     ports:
       - "8000:8000"
     restart: unless-stopped
@@ -70,7 +70,7 @@ services:
     name: retroassembly
     options:
       - container: 'boot args:--pull'
-      - expose: '8000:8000 proto:tcp' \
+      - expose: '8000:8000 proto:tcp'
     oci:
       user: root
       environment:
@@ -78,10 +78,10 @@ services:
         - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY: !ENV '${RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY}'
         - RETROASSEMBLY_RUN_TIME_PORT: !ENV '${RETROASSEMBLY_RUN_TIME_PORT}'
     volumes:
-      - retroassembly_data: /data
+      - retroassembly: /data
 volumes:
-  retroassembly_data:
-    device: '/path/to/containers/retroassembly/data'
+  retroassembly:
+    device: '/path/to/containers/retroassembly'
 ```
 
 **Makejail**:
@@ -104,7 +104,7 @@ podman run -d --name retroassembly \
   -e RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
   -e RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
   -e RETROASSEMBLY_RUN_TIME_PORT= \
-  -v /path/to/containers/retroassembly/data:/data \
+  -v /path/to/containers/retroassembly:/data \
   ghcr.io/daemonless/retroassembly:latest
 ```
 
@@ -120,7 +120,7 @@ appjail oci run -Pd \
   -e RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
   -e RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
   -e RETROASSEMBLY_RUN_TIME_PORT= \
-  -o fstab="/path/to/containers/retroassembly/data /data <pseudofs>" \
+  -o fstab="/path/to/containers/retroassembly /data <pseudofs>" \
   ghcr.io/daemonless/retroassembly:latest retroassembly
 ```
 **Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
@@ -141,7 +141,7 @@ appjail oci run -Pd \
     ports:
       - "8000:8000"
     volumes:
-      - "/path/to/containers/retroassembly/data:/data"
+      - "/path/to/containers/retroassembly:/data"
 ```
 
 Access at: `http://localhost:8000`
