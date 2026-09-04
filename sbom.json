@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-26T08:11:01Z",
+  "generated": "2026-09-04T23:08:19Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-08-26T07:57:58Z",
+      "generated": "2026-09-04T23:07:30Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -147,7 +147,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -175,7 +175,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p2"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.127"
+            "version": "3.128"
           },
           {
             "licenses": [
@@ -375,14 +375,14 @@
               "NA"
             ],
             "name": "node",
-            "version": "24.18.0_3"
+            "version": "24.19.0_3"
           },
           {
             "licenses": [
               "MIT"
             ],
             "name": "node24",
-            "version": "24.18.0"
+            "version": "24.19.0"
           },
           {
             "licenses": [
