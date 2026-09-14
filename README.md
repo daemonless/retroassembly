@@ -7,6 +7,7 @@ Source: dbuild templates
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/retroassembly/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/retroassembly/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/daemonless/retroassembly?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/retroassembly/commits)
+[![OCI Pulls](https://img.shields.io/docker/pulls/daemonless/retroassembly?style=flat-square&label=OCI+Pulls&color=blue)](https://hub.docker.com/r/daemonless/retroassembly)
 
 Personal retro game collection cabinet in your browser. Play NES, SNES, Genesis, GBA, and more.
 
@@ -72,7 +73,7 @@ services:
   retroassembly:
     name: retroassembly
     options:
-      - container: 'boot args:--pull'
+      - container: 'args:--pull'
       - expose: '8000:8000 proto:tcp'
     oci:
       user: root
@@ -94,13 +95,18 @@ volumes:
 
 ARG tag=latest
 
+OPTION container=boot
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/retroassembly:${tag}
 ```
 
 Save the files above, then run `appjail-director up`.
 
-**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+> [!WARNING]
+> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
+>
+> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
 ### Podman CLI
 
@@ -118,6 +124,7 @@ Save as `run.sh`, then run `sh run.sh`.
 
 ### AppJail
 
+
 ```bash
 appjail oci run -Pd \
   -o overwrite=force \
@@ -132,35 +139,42 @@ appjail oci run -Pd \
   ghcr.io/daemonless/retroassembly:latest retroassembly
 ```
 
-Save as `run.sh`, then run `sh run.sh`.
+Save the files above, then run `sh run.sh`.
 
-**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
+> [!WARNING]
+> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
+>
+> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
 
 ### Bastille
 
 > [!WARNING]
-> Bastille's OCI support is **experimental**. It requires `buildah`, shares the host network stack (`inherit`), and persists image-declared volumes under `--data-path`.
+> Bastille's OCI support is **experimental**. It requires `buildah` and shares the host network stack (`inherit`). Mount volumes with `--volume HOST JAIL`; without it, image-declared volumes are stored under `${bastille_volumesdir}/${jail}`.
 
 ```yaml
 services:
   retroassembly:
+    name: retroassembly
     image: "ghcr.io/daemonless/retroassembly:latest"
-    container_name: retroassembly
-    network_mode: host  # jail shares host networking
+    network:
+      - mode: host
     environment:
       - RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data
       - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage
       - RETROASSEMBLY_RUN_TIME_PORT=
+    volumes:
+      - "/path/to/containers/retroassembly:/data"
 ```
 
-Save as `podman-compose.yml`, then run `bastille up`. Or via CLI:
+Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
 
 ```bash
 bastille create -O \
   --env RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
   --env RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
   --env RETROASSEMBLY_RUN_TIME_PORT= \
-  --data-path /path/to/containers/retroassembly \
+  --volume /path/to/containers/retroassembly /data \
   retroassembly ghcr.io/daemonless/retroassembly:latest inherit
 ```
 

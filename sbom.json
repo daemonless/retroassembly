@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-04T23:08:19Z",
+  "generated": "2026-09-14T22:27:58Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-09-04T23:07:30Z",
+      "generated": "2026-09-14T22:27:19Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.128"
+            "version": "3.129"
           },
           {
             "licenses": [
@@ -292,6 +292,13 @@
           },
           {
             "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "indexinfo",
+            "version": "0.3.1_1"
+          },
+          {
+            "licenses": [
               "MIT"
             ],
             "name": "jq",
@@ -311,6 +318,20 @@
             ],
             "name": "libedit",
             "version": "3.1.20260512,1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libffi",
+            "version": "3.6.0"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "libfmt",
+            "version": "12.1.0"
           },
           {
             "licenses": [
@@ -350,10 +371,25 @@
           },
           {
             "licenses": [
+              "APACHE20"
+            ],
+            "name": "lief",
+            "version": "0.17.6"
+          },
+          {
+            "licenses": [
               "MIT"
             ],
             "name": "llhttp",
             "version": "9.4.2"
+          },
+          {
+            "licenses": [
+              "APACHE20",
+              "GPLv2+"
+            ],
+            "name": "mbedtls3",
+            "version": "3.6.7"
           },
           {
             "licenses": [
@@ -372,17 +408,10 @@
           },
           {
             "licenses": [
-              "NA"
-            ],
-            "name": "node",
-            "version": "24.19.0_3"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
-            "name": "node24",
-            "version": "24.19.0"
+            "name": "node26",
+            "version": "26.7.0"
           },
           {
             "licenses": [
@@ -411,7 +440,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.8"
+            "version": "4.6.11"
           },
           {
             "licenses": [
@@ -427,6 +456,13 @@
             ],
             "name": "skalibs",
             "version": "2.14.5.1"
+          },
+          {
+            "licenses": [
+              "MIT"
+            ],
+            "name": "spdlog",
+            "version": "1.17.0"
           },
           {
             "licenses": [
@@ -668,7 +704,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 62,
+        "freebsd": 67,
         "go": 0,
         "java": 0,
         "node": 41,
@@ -676,7 +712,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 103
+        "total": 108
       }
     }
   }
