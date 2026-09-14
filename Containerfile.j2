@@ -6,8 +6,10 @@ ARG BASE_VERSION=15
 # --- Stage 1: Builder ---
 FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
 
+# node26: upstream requires >=26.5.0, and the `node` meta package is 24.19.0,
+# whose ObjectWrap regression aborts better-sqlite3 (nodejs/node#65446).
 RUN pkg update && pkg install -y \
-    node npm python3 git ca_root_nss \
+    node26 npm-node26 python3 git ca_root_nss \
     FreeBSD-toolchain FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-runtime-dev
 
 ARG VERSION=latest
@@ -53,7 +55,7 @@ RUN pnpm prune --prod
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
-ARG PACKAGES="node ca_root_nss"
+ARG PACKAGES="node26 ca_root_nss"
 ARG UPSTREAM_URL="https://api.github.com/repos/arianrhodsandlot/retroassembly/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
 {%- if ports %}
