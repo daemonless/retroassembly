@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-14T22:27:58Z",
+  "generated": "2026-09-21T22:05:36Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-09-14T22:27:19Z",
+      "generated": "2026-09-21T21:59:42Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -49,6 +49,13 @@
               "CDDL-1.0"
             ],
             "name": "FreeBSD-ctf-lib",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD-3-Clause"
+            ],
+            "name": "FreeBSD-dhclient",
             "version": "15.1"
           },
           {
@@ -168,6 +175,13 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-rc",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
           {
@@ -704,7 +718,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 67,
+        "freebsd": 69,
         "go": 0,
         "java": 0,
         "node": 41,
@@ -712,7 +726,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 108
+        "total": 110
       }
     }
   }
