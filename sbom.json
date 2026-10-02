@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-21T22:05:36Z",
+  "generated": "2026-10-02T23:47:15Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-09-21T21:59:42Z",
+      "generated": "2026-10-02T23:46:35Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -266,7 +266,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.129"
+            "version": "3.130"
           },
           {
             "licenses": [

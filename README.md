@@ -40,7 +40,7 @@ services:
       - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage  # Directory for uploaded ROM files (default: /data/storage)
       - RETROASSEMBLY_RUN_TIME_PORT=  # HTTP port (default: 8000)
     volumes:
-      - "/path/to/containers/retroassembly:/data"
+      - "/containers/retroassembly:/data"
     ports:
       - "8000:8000"
     # always (not unless-stopped) so FreeBSD's podman rc.d auto-starts it at boot
@@ -85,7 +85,7 @@ services:
       - retroassembly: /data
 volumes:
   retroassembly:
-    device: '/path/to/containers/retroassembly'
+    device: '/containers/retroassembly'
 ```
 
 **Makejail**:
@@ -101,45 +101,6 @@ OPTION from=ghcr.io/daemonless/retroassembly:${tag}
 ```
 
 Save the files above, then run `appjail-director up`.
-
-
-> [!WARNING]
-> Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the jail's IPv4 address or hostname assigned by the virtual network.
->
-> To avoid exposing ports, just remove the `expose` option in your `appjail-director.yml` or from your command-line arguments.
-
-### Podman CLI
-
-```bash
-podman run -d --name retroassembly \
-  -p 8000:8000 \
-  -e RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
-  -e RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
-  -e RETROASSEMBLY_RUN_TIME_PORT= \
-  -v /path/to/containers/retroassembly:/data \
-  ghcr.io/daemonless/retroassembly:latest
-```
-
-Save as `run.sh`, then run `sh run.sh`.
-
-### AppJail
-
-
-```bash
-appjail oci run -Pd \
-  -o overwrite=force \
-  -o container="args:--pull" \
-  -o virtualnet=":<random> default" \
-  -o nat \
-  -o expose="8000:8000 proto:tcp" \
-  -e RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
-  -e RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
-  -e RETROASSEMBLY_RUN_TIME_PORT= \
-  -o fstab="/path/to/containers/retroassembly /data <pseudofs>" \
-  ghcr.io/daemonless/retroassembly:latest retroassembly
-```
-
-Save the files above, then run `sh run.sh`.
 
 
 > [!WARNING]
@@ -164,40 +125,10 @@ services:
       - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage
       - RETROASSEMBLY_RUN_TIME_PORT=
     volumes:
-      - "/path/to/containers/retroassembly:/data"
+      - "/containers/retroassembly:/data"
 ```
 
-Save as `bastille-compose.yml`, then run `bastille up`. Or via CLI:
-
-```bash
-bastille create -O \
-  --env RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data \
-  --env RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage \
-  --env RETROASSEMBLY_RUN_TIME_PORT= \
-  --volume /path/to/containers/retroassembly /data \
-  retroassembly ghcr.io/daemonless/retroassembly:latest inherit
-```
-
-### Ansible
-
-```yaml
-- name: Deploy retroassembly
-  containers.podman.podman_container:
-    name: retroassembly
-    image: "ghcr.io/daemonless/retroassembly:latest"
-    state: started
-    restart_policy: always
-    env:
-      RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY: "/data"
-      RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY: "/data/storage"
-      RETROASSEMBLY_RUN_TIME_PORT: ""
-    ports:
-      - "8000:8000"
-    volumes:
-      - "/path/to/containers/retroassembly:/data"
-```
-
-Save as `retroassembly-deploy.yaml`, then run `ansible-playbook retroassembly-deploy.yaml`.
+Save as `bastille-compose.yml`, then run `bastille up`.
 
 Access at: `http://localhost:8000`
 
