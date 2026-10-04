@@ -3,7 +3,7 @@ name: retroassembly
 x-daemonless:
   title: "RetroAssembly"
   icon: ":material-controller-classic:"
-  category: "Entertainment"
+  category: "Media Servers"
   description: "Personal retro game collection cabinet in your browser. Play NES, SNES, Genesis, GBA, and more."
   upstream_url: "https://github.com/arianrhodsandlot/retroassembly"
   web_url: "https://retroassembly.com/"
