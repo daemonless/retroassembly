@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-04T08:52:40Z",
+  "generated": "2026-10-13T21:44:03Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-10-04T08:52:06Z",
+      "generated": "2026-10-13T21:43:30Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -42,7 +42,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-clibs",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -56,7 +56,7 @@
               "BSD-3-Clause"
             ],
             "name": "FreeBSD-dhclient",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -91,7 +91,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-libcasper",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -154,7 +154,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1p3"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p3"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -210,7 +210,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-utilities",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -238,7 +238,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -259,21 +259,21 @@
               "MIT"
             ],
             "name": "c-ares",
-            "version": "1.34.6"
+            "version": "1.34.8"
           },
           {
             "licenses": [
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
               "MIT"
             ],
             "name": "corepack",
-            "version": "0.35.0"
+            "version": "0.36.0"
           },
           {
             "licenses": [
@@ -306,13 +306,6 @@
           },
           {
             "licenses": [
-              "BSD2CLAUSE"
-            ],
-            "name": "indexinfo",
-            "version": "0.3.1_1"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "jq",
@@ -335,20 +328,6 @@
           },
           {
             "licenses": [
-              "MIT"
-            ],
-            "name": "libffi",
-            "version": "3.6.0"
-          },
-          {
-            "licenses": [
-              "MIT"
-            ],
-            "name": "libfmt",
-            "version": "12.1.0"
-          },
-          {
-            "licenses": [
               "BSD2CLAUSE",
               "GPLv2"
             ],
@@ -360,21 +339,21 @@
               "MIT"
             ],
             "name": "libnghttp2",
-            "version": "1.69.0"
+            "version": "1.70.0"
           },
           {
             "licenses": [
               "MIT"
             ],
             "name": "libnghttp3",
-            "version": "1.17.0"
+            "version": "1.18.0"
           },
           {
             "licenses": [
               "MIT"
             ],
             "name": "libngtcp2",
-            "version": "1.24.0"
+            "version": "1.25.0"
           },
           {
             "licenses": [
@@ -385,25 +364,10 @@
           },
           {
             "licenses": [
-              "APACHE20"
-            ],
-            "name": "lief",
-            "version": "0.17.6"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "llhttp",
-            "version": "9.4.2"
-          },
-          {
-            "licenses": [
-              "APACHE20",
-              "GPLv2+"
-            ],
-            "name": "mbedtls3",
-            "version": "3.6.7"
+            "version": "9.4.3"
           },
           {
             "licenses": [
@@ -411,7 +375,7 @@
               "APACHE20"
             ],
             "name": "merve",
-            "version": "1.2.2_1"
+            "version": "1.2.2_3"
           },
           {
             "licenses": [
@@ -424,8 +388,8 @@
             "licenses": [
               "MIT"
             ],
-            "name": "node26",
-            "version": "26.7.0"
+            "name": "node24",
+            "version": "24.21.0_1"
           },
           {
             "licenses": [
@@ -439,7 +403,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.7.5"
+            "version": "2.8.4"
           },
           {
             "licenses": [
@@ -454,7 +418,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.11"
+            "version": "5.0.1"
           },
           {
             "licenses": [
@@ -462,7 +426,7 @@
               "APACHE20"
             ],
             "name": "simdutf",
-            "version": "9.0.0"
+            "version": "9.2.1"
           },
           {
             "licenses": [
@@ -473,17 +437,10 @@
           },
           {
             "licenses": [
-              "MIT"
-            ],
-            "name": "spdlog",
-            "version": "1.17.0"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
-            "version": "3.53.3,1"
+            "version": "3.53.4,1"
           },
           {
             "licenses": [
@@ -542,7 +499,7 @@
           {
             "name": "corepack",
             "purl": "",
-            "version": "0.35.0"
+            "version": "0.36.0"
           },
           {
             "name": "decompress-response",
@@ -718,7 +675,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 69,
+        "freebsd": 63,
         "go": 0,
         "java": 0,
         "node": 41,
@@ -726,7 +683,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 110
+        "total": 104
       }
     }
   }
