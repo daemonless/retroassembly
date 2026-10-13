@@ -7,16 +7,18 @@
 # RetroAssembly for FreeBSD
 # Multi-stage build: compile Node app + native better-sqlite3 addon
 
-ARG BASE_VERSION=15
+ARG BASE_VERSION=15-latest
 
 # --- Stage 1: Builder ---
 FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
 
-# node26: upstream requires >=26.5.0, and the `node` meta package is 24.19.0,
-# whose ObjectWrap regression aborts better-sqlite3 (nodejs/node#65446).
+# node24 (24.21.0): node26 in FreeBSD 15 ports currently crashes with SIGBUS in
+# simdutf::detail::find during CommonJS parsing (merve/simdutf ABI issue).
 RUN pkg update && pkg install -y \
-    node26 npm-node26 python3 git ca_root_nss \
-    FreeBSD-toolchain FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-runtime-dev
+    node24 corepack python3 git ca_root_nss jq gmake \
+    FreeBSD-toolchain FreeBSD-clang-dev FreeBSD-clibs-dev FreeBSD-runtime-dev && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
 
 ARG VERSION=latest
 RUN if [ "$VERSION" = "latest" ]; then \
@@ -35,10 +37,9 @@ RUN sed -i '' '/dangerouslyAllowAllBuilds/d' pnpm-workspace.yaml && \
     printf 'allowBuilds:\n  better-sqlite3: true\n  esbuild: true\n  sharp: true\n  workerd: false\n' >> pnpm-workspace.yaml && \
     cat pnpm-workspace.yaml
 
-# Pin exact pnpm version -- "latest"/major-only delegates to a FreeBSD @pnpm/exe binary that doesn't exist.
+# Corepack automatically downloads and runs the exact pnpm version declared in package.json
 # Install all deps (dev included for build; better-sqlite3 compiled here with toolchain)
-RUN PNPM_VERSION=$(jq -r '.packageManager' package.json | sed 's/^pnpm@//') && \
-    npm install -g "pnpm@${PNPM_VERSION}" && \
+RUN corepack enable && \
     pnpm install --no-frozen-lockfile
 
 # vite-plus bundles rolldown but expects the FreeBSD native binding alongside its dist files
@@ -61,7 +62,7 @@ RUN pnpm prune --prod
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
-ARG PACKAGES="node26 ca_root_nss"
+ARG PACKAGES="node24 ca_root_nss"
 ARG UPSTREAM_URL="https://api.github.com/repos/arianrhodsandlot/retroassembly/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
 ARG HEALTHCHECK_ENDPOINT="http://localhost:8000/"
