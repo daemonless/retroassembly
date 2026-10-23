@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-13T21:44:03Z",
+  "generated": "2026-10-23T07:25:23Z",
   "image": "retroassembly",
   "tags": {
     "latest": {
       "app_version": "v7.260719.1051",
       "arch": "amd64",
-      "generated": "2026-10-13T21:43:30Z",
+      "generated": "2026-10-23T07:24:48Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -238,7 +238,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -274,13 +274,6 @@
             ],
             "name": "corepack",
             "version": "0.36.0"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -371,14 +364,6 @@
           },
           {
             "licenses": [
-              "MIT",
-              "APACHE20"
-            ],
-            "name": "merve",
-            "version": "1.2.2_3"
-          },
-          {
-            "licenses": [
               "MIT"
             ],
             "name": "nbytes",
@@ -389,7 +374,7 @@
               "MIT"
             ],
             "name": "node24",
-            "version": "24.21.0_1"
+            "version": "24.21.0_3"
           },
           {
             "licenses": [
@@ -407,33 +392,11 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
               "MIT",
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.1"
-          },
-          {
-            "licenses": [
-              "MIT",
-              "APACHE20"
-            ],
-            "name": "simdutf",
-            "version": "9.2.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
+            "version": "5.0.5"
           },
           {
             "licenses": [
@@ -675,7 +638,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 63,
+        "freebsd": 58,
         "go": 0,
         "java": 0,
         "node": 41,
@@ -683,7 +646,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 104
+        "total": 99
       }
     }
   }
