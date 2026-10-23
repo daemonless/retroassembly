@@ -10,7 +10,7 @@
 ARG BASE_VERSION=15-latest
 
 # --- Stage 1: Builder ---
-FROM ghcr.io/daemonless/base:${BASE_VERSION} AS builder
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION} AS builder
 
 # node24 (24.21.0): node26 in FreeBSD 15 ports currently crashes with SIGBUS in
 # simdutf::detail::find during CommonJS parsing (merve/simdutf ABI issue).
