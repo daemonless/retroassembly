@@ -1,0 +1,6 @@
+#!/bin/sh
+# /data (database + ROMs) is owned by the build-time bsd (1000): follow a
+# PUID change, or sqlite can't open the database.
+if [ "$(id -u)" = 0 ] && [ "$(stat -f %u /data)" != "$(id -u bsd)" ]; then
+    chown -R bsd:bsd /data
+fi

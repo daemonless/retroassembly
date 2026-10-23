@@ -38,7 +38,7 @@ services:
     environment:
       - RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data  # Data directory for SQLite database (default: /data)
       - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage  # Directory for uploaded ROM files (default: /data/storage)
-      - RETROASSEMBLY_RUN_TIME_PORT=  # HTTP port (default: 8000)
+      # - RETROASSEMBLY_RUN_TIME_PORT=  # HTTP port (default: 8000)
     volumes:
       - "/containers/retroassembly:/data"
     ports:
@@ -58,7 +58,6 @@ Save as `compose.yaml`, then run `podman-compose up -d`.
 DIRECTOR_PROJECT=retroassembly
 RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data
 RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage
-RETROASSEMBLY_RUN_TIME_PORT=
 ```
 
 **appjail-director.yml**:
@@ -80,7 +79,6 @@ services:
       environment:
         - RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY: !ENV '${RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY}'
         - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY: !ENV '${RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY}'
-        - RETROASSEMBLY_RUN_TIME_PORT: !ENV '${RETROASSEMBLY_RUN_TIME_PORT}'
     volumes:
       - retroassembly: /data
 volumes:
@@ -123,7 +121,6 @@ services:
     environment:
       - RETROASSEMBLY_RUN_TIME_DATA_DIRECTORY=/data
       - RETROASSEMBLY_RUN_TIME_STORAGE_DIRECTORY=/data/storage
-      - RETROASSEMBLY_RUN_TIME_PORT=
     volumes:
       - "/containers/retroassembly:/data"
 ```

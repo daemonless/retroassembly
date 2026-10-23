@@ -59,7 +59,7 @@ RUN node --run=build
 RUN pnpm prune --prod
 
 # --- Stage 2: Final Runtime ---
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="node24 ca_root_nss"
@@ -104,8 +104,11 @@ COPY --from=builder /version.txt /app/version
 RUN mkdir -p /data && chown -R bsd:bsd /data /app && chmod -R a+rX /app
 
 COPY root/ /
+RUN chmod +x /daemonless/libexec/retroassembly /daemonless/init.d/*
 
-RUN chmod +x /etc/services.d/retroassembly/run /healthz 2>/dev/null || true
+CMD ["/daemonless/libexec/retroassembly"]
+
+RUN chmod +x /healthz
 
 # --- Expose (Injected by Generator) ---
 EXPOSE 8000
